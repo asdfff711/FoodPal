@@ -2,6 +2,7 @@ import React from "react";
 import DayPanel from "./DayPanel";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import { Droppable } from "react-beautiful-dnd";
 
 const Container = styled.div`
   margin: 8px;
@@ -17,7 +18,7 @@ const MealPlanner = ({ days }) => {
       <h1>MealPlanner</h1>
       <Container>
         {Object.keys(days).map( date => (
-          <DayPanel date={date} meallist={days[date].mealtask} day={days[date].day}/>
+          <DayPanel key={ 'day'+date} date={date} mealList={days[date].mealtask} day={days[date].day}/>
         ))}
       </Container>
     </div>

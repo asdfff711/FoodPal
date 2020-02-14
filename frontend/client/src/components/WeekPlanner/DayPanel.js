@@ -1,5 +1,7 @@
 import React from "react";
+import DayPanelSegment from "./DayPanelSegment";
 import styled from "styled-components";
+import { Droppable } from "react-beautiful-dnd";
 const Container = styled.div`
   margin: 8px;
   border: 1px solid lightgray;
@@ -9,10 +11,21 @@ const Container = styled.div`
 `;
 
 const DayPanel = props => {
+  const { day, date, mealList } = props;
+
   return (
     <Container>
-      <h1>{props.day}</h1>
-      <h2>{props.date}</h2>
+      <h1>{day}</h1>
+      <h2>{date}</h2>
+      <Droppable>
+        {provided => (
+          <div ref={provided.innerRef} {...provided.droppableProps}>
+            {mealList.map(item => (
+              <DayPanelSegment name={item.name} image={item.image} />
+            ))}
+          </div>
+        )}
+      </Droppable>
     </Container>
   );
 };
