@@ -17,11 +17,11 @@ const DayPanel = props => {
     <Container>
       <h1>{day}</h1>
       <h2>{date}</h2>
-      <Droppable>
+      <Droppable droppableId={'droppable-'+date}>
         {provided => (
           <div ref={provided.innerRef} {...provided.droppableProps}>
             {mealList.map(item => (
-              <DayPanelSegment name={item.name} image={item.image} />
+              <DayPanelSegment name={item.name} image={item.image} key={date+'-'+item.name} />
             ))}
           </div>
         )}

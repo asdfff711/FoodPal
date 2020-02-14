@@ -13,7 +13,7 @@ export class RecipeList extends Component {
       <div>
         <h2>Recipe List</h2>
         {recipeList.map(item => (
-          <Recipe name={item.name} image={item.image} />
+          <Recipe name={item.name} image={item.image} key={item.name}/>
         ))}
       </div>
     );
