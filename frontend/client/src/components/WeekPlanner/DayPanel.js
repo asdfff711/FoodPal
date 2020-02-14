@@ -1,9 +1,9 @@
 import React from 'react'
 
-const DayPanel = () => {
+const DayPanel = ( props ) => {
     return (
         <div>
-            
+            {props.date}
         </div>
     )
 }

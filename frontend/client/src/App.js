@@ -1,9 +1,14 @@
 import React from 'react';
+import MealPlanner from './components/WeekPlanner/MealPlanner';
+import RecipeList from './components/WeekPlanner/RecipeList';
 
-function App() {
+const App = () => {
   return (
-    'Hello'
-  );
+    <div>
+      <MealPlanner />
+      <RecipeList />
+    </div>
+  )
 }
 
 export default App;

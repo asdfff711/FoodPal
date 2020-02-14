@@ -1,3 +1,4 @@
 import { combineReducers } from "redux";
+import mealplan from './mealplan';
 
-export default combineReducers({  });
+export default combineReducers({ mealplan });
