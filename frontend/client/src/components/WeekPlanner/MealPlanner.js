@@ -1,16 +1,25 @@
 import React from "react";
 import DayPanel from "./DayPanel";
+import styled from "styled-components";
 import { connect } from "react-redux";
+
+const Container = styled.div`
+  margin: 8px;
+  /* border: 1px solid lightgray; */
+  border-radius: 2px;
+    display: flex;
+  flex-direction: row;
+`;
 
 const MealPlanner = ({ days }) => {
   return (
     <div>
       <h1>MealPlanner</h1>
-      <div>
-        {Object.keys(days).map(date => (
-          <DayPanel date={date} meallist={date.meallist} day={date.day}/>
+      <Container>
+        {Object.keys(days).map( date => (
+          <DayPanel date={date} meallist={days[date].mealtask} day={days[date].day}/>
         ))}
-      </div>
+      </Container>
     </div>
   );
 };
