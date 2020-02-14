@@ -1,6 +1,7 @@
 // Recipe Component for the Day
 import React from "react";
 import styled from "styled-components";
+import { Draggable } from "react-beautiful-dnd";
 
 const Container = styled.div`
   margin: 2px;
@@ -14,7 +15,18 @@ const Container = styled.div`
 `;
 
 const Recipe = props => {
-  return <Container>{props.name}</Container>;
+  return (<Draggable draggableId={props.name} index={props.index}>
+      {(provided, snapshot) => (
+          <Container
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            ref={provided.innerRef}
+            isDragging={snapshot.isDragging}
+          >
+            {props.name}
+          </Container>
+        )}
+  </Draggable>);
 };
 
 export default Recipe;

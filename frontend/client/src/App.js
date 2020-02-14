@@ -13,9 +13,12 @@ const Container = styled.div`
 `;
 
 const App = () => {
+  const onDragEnd = (details) =>{
+    console.log(details);
+  }
   return (
     <div>
-      <DragDropContext onDragEnd>
+      <DragDropContext onDragEnd={onDragEnd}>
         <Container>
           <MealPlanner />
           <RecipeList />
