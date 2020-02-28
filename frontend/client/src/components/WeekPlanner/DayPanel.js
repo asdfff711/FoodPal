@@ -10,6 +10,12 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
+const DroppableContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const DayPanel = props => {
   const { day, date, mealList } = props;
 
@@ -17,11 +23,16 @@ const DayPanel = props => {
     <Container>
       <h1>{day}</h1>
       <h2>{date}</h2>
-      <Droppable droppableId={'droppable-'+date}>
+      <Droppable droppableId={"droppable-" + date}>
         {provided => (
           <div ref={provided.innerRef} {...provided.droppableProps}>
             {mealList.map(item => (
-              <DayPanelSegment name={item.name} image={item.image} key={date+'-'+item.name} />
+              <DayPanelSegment
+                name={item.name}
+                image={item.image}
+                key={date + "-" + item.name}
+                date={props.date}
+              />
             ))}
           </div>
         )}

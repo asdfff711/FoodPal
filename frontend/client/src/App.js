@@ -2,6 +2,7 @@ import React from "react";
 import MealPlanner from "./components/WeekPlanner/MealPlanner";
 import RecipeList from "./components/WeekPlanner/RecipeList";
 import { DragDropContext } from "react-beautiful-dnd";
+import Landing from './page/Landing';
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -18,12 +19,13 @@ const App = () => {
   }
   return (
     <div>
-      <DragDropContext onDragEnd={onDragEnd}>
+      <Landing/>
+      {/* <DragDropContext onDragEnd={onDragEnd}>
         <Container>
           <MealPlanner />
           <RecipeList />
         </Container>
-      </DragDropContext>
+      </DragDropContext> */}
     </div>
   );
 };

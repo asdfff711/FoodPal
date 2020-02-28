@@ -7,7 +7,7 @@ const initialState = {
   "10/02/2020": {
     day: "Monday",
     mealtask: [
-      { name: "breakfast", recipes: [] },
+      { name: "breakfast", recipes: ['Chicken'] },
       { name: "lunch", recipes: [] },
       { name: "dinner", recipes: [] },
       { name: "snack", recipes: [] }
