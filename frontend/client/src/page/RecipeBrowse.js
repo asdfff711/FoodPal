@@ -1,17 +1,21 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import RecipeCard from '../components/layout/RecipeCard';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
+import RecipeCard from "../components/layout/RecipeCard";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
+    textAlign: "center",
+    color: theme.palette.text.secondary
+  },
+  marginAutoItem: {
+    margin: 'auto'
   },
 }));
 
@@ -20,22 +24,22 @@ export default function CenteredGrid() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>
-              <RecipeCard/>
-          </Paper>
+      <Container>
+      <Grid container spacing={3} >
+        <Grid container item xs={12} sm={6} md={3} justify='center'>
+          <RecipeCard />
         </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
+        <Grid container item xs={12} sm={6} md={3} justify='center'>
+          <RecipeCard />
         </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
+        <Grid container item xs={12} sm={6} md={3} justify='center'>
+          <RecipeCard />
         </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
+        <Grid container item xs={12} sm={6} md={3} justify='center'>
+          <RecipeCard />
         </Grid>
       </Grid>
+      </Container>
     </div>
   );
 }

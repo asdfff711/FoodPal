@@ -39,6 +39,8 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title} color={"white"}>
             {"FoodPal"}
           </Typography>
+          <Button color="inherit">View Recipes</Button>
+          <Button color="inherit">Meal Planner</Button>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>

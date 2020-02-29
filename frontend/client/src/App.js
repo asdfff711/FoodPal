@@ -4,6 +4,14 @@ import RecipeList from "./components/WeekPlanner/RecipeList";
 import { DragDropContext } from "react-beautiful-dnd";
 import Landing from './page/Landing';
 import styled from "styled-components";
+import Header from "./components/layout/Header";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 const Container = styled.div`
   margin: 8px;
@@ -19,6 +27,8 @@ const App = () => {
   }
   return (
     <div>
+      <Router>
+      <Header color={"transparent"} />
       <Landing/>
       {/* <DragDropContext onDragEnd={onDragEnd}>
         <Container>
@@ -26,6 +36,7 @@ const App = () => {
           <RecipeList />
         </Container>
       </DragDropContext> */}
+      </Router>
     </div>
   );
 };
