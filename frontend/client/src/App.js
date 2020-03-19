@@ -2,7 +2,8 @@ import React from "react";
 import MealPlanner from "./components/WeekPlanner/MealPlanner";
 import RecipeList from "./components/WeekPlanner/RecipeList";
 import { DragDropContext } from "react-beautiful-dnd";
-import Landing from './page/Landing';
+import Landing from './components/page/Landing';
+import Recipe from './components/page/Recipe';
 import styled from "styled-components";
 import Header from "./components/layout/Header";
 import {
@@ -29,6 +30,9 @@ const App = () => {
     <div>
       <Router>
       <Header color={"transparent"} />
+      <Route exact path='/recipe'>
+        <Recipe/>
+      </Route>
       <Landing/>
       {/* <DragDropContext onDragEnd={onDragEnd}>
         <Container>
