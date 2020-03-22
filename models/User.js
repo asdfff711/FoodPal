@@ -27,4 +27,4 @@ const UserSchema = new mongoose.Schema({
 });
 
 // You can add helper functions to your documents
-module.exports = user = mongoose.model("recipe", RecipeSchema);
+module.exports = user = mongoose.model("User", UserSchema);
