@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 const CalenderDaySchema = new mongoose.Schema({
-  Day: {
+  date: {
     type: String,
     required: true
   },
@@ -10,6 +10,7 @@ const CalenderDaySchema = new mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: "Ingredient"
   },
+  notes: [String],
   breakfast: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -37,4 +38,4 @@ const CalenderDaySchema = new mongoose.Schema({
 });
 
 // You can add helper functions to your documents
-module.exports = user = mongoose.model("recipe", RecipeSchema);
+module.exports = CalenderDay = mongoose.model("calenderDay", CalenderDaySchema);

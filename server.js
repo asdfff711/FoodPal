@@ -11,5 +11,6 @@ app.use(express.json({extended: true}));
 // Routing
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", require('./routes/api/users'));
+app.use("/api/recipes", require('./routes/api/recipe'));
 
 app.listen(port, () => console.log(`FoodPal listening on port ${port}!`));
